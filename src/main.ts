@@ -1,20 +1,47 @@
-import './style.less'
-import { setupCounter } from './counter.ts'
+import './style.less';
+// import Chat from './Pages/Chat/Chat';
+// import Error from './Pages/Error/Error';
+import {
+    Chat,
+    Login,
+    Error,
+    Registration,
+    Profile,
+    EditProfile,
+    ChangePassword,
+} from './Pages';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.querySelector<HTMLDivElement>('#app')!;
+    let page: string;
+    const location = window.location.pathname;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+    switch (location) {
+        case '/login':
+            page = Login();
+            break;
+        case '/registration':
+            page = Registration();
+            break;
+        case '/profile':
+            page = Profile();
+            break;
+        case '/profile/edit':
+            page = EditProfile();
+            break;
+        case '/change_password':
+            page = ChangePassword();
+            break;
+        case '/chat':
+            page = Chat();
+            break;
+        case '/500':
+            page = Error("500", "Мы уже фиксим");
+            break;
+        default:
+            page = Error("404", "Не туда попали");
+            break;
+    }
+
+    root.innerHTML = page;
+});

@@ -1,0 +1,22 @@
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #EFEFEF;
+    border: none;
+    height: 32px;
+    padding: 0 10px 0 10px;
+    &::placeholder {
+      text-align: center;
+    }
+    &:active, &:hover, &:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+  }
+}
