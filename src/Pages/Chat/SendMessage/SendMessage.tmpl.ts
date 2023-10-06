@@ -1,5 +1,6 @@
-import Clip from "../../../Icons/Clip.svg";
-import SendButton from "../../../Icons/SendButton.svg"
+import Clip from '@Icons/Clip.svg';
+import SendButton from '@Icons/SendButton.svg';
+
 export default `
     <div class="{{wrapper_sendMessage_class}}">
         <form class="{{sendMessage_form_class}}">
@@ -10,4 +11,4 @@ export default `
             </button>        
         </form>
     </div>
-`
+`;

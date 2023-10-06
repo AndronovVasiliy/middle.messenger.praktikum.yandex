@@ -4,4 +4,4 @@ export default `
             <img src="{{avatar}}" alt="">
         {{/if}}
     </div>
-`
+`;

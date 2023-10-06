@@ -8,4 +8,4 @@ export default `
             {{time}}
         </time>
     </li>
-`
+`;

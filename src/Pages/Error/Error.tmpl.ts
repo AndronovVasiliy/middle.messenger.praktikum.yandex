@@ -1,4 +1,4 @@
-import { Link } from '../../components';
+import { Link } from '@components';
 
 export default `
     <main class="{{wrapper_error_class}}">
@@ -8,6 +8,6 @@ export default `
         <span class="{{error_subtitle_class}}">
             {{subtitleText}}
         </span>
-        ${Link("Назад к чатам", "/chat")}
+        ${Link('Назад к чатам', '/chat')}
     </main>
 `;
