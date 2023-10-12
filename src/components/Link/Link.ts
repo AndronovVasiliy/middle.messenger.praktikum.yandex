@@ -1,13 +1,23 @@
-import Handlebars from 'handlebars';
-import LinkTmpl from './Link.tmpl';
+import Block from '../../Utils/Block';
 import styles from './Link.module.less';
+import { template } from './Link.tmpl';
 
-export const Link = (textLink: string, href: string) => {
-  const template = Handlebars.compile(LinkTmpl);
-
-  return template({
-    textLink,
-    class: styles.link,
-    href,
-  });
+type TProps = {
+  children: string,
+  href: string,
 };
+export class Link extends Block {
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+  constructor(props: TProps) {
+    super({
+      link_wrapper_class: styles.link_wrapper,
+      ...props,
+    });
+  }
+
+  render() {
+    return this.compile(template, {
+      ...this.props,
+    });
+  }
+}

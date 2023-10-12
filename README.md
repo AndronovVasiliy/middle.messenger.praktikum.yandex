@@ -7,7 +7,7 @@
 ### Ссылка на [Netlify](https://peaceful-semifreddo-3e6913.netlify.app/login)
 
 ### Используемые пакеты
-LESS, Handlebars
+LESS, Handlebars, nanoid
 
 ### Версия NodeJS
 16.13.0

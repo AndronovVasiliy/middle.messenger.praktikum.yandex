@@ -9,22 +9,31 @@
     "preview": "vite preview",
     "start": "tsc && vite build && node server.cjs",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "lint:fix": "eslint --fix --ext .js,.ts ."
+    "lint-styles": "npx stylelint \"src/**/*.less\"",
+    "type-check": "tsc --noEmit",
+    "type-check-lint": "npm run type-check && npm run lint-styles && npm run lint",
+    "vite": "^4.4.5"
   },
   "devDependencies": {
+    "@types/less": "^3.0.4",
     "@types/node": "^20.7.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.50.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "less": "^4.2.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.11",
+    "postcss-less": "^6.0.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5.0.2"
   },
   "dependencies": {
     "express": "^4.18.2",
     "handlebars": "^4.7.8",
+    "nanoid": "^5.0.1",
     "vite-plugin-handlebars": "^1.6.0"
   }
 }

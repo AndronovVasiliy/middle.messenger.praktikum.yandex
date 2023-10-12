@@ -1,6 +1,6 @@
 import BackArrow from '../../Icons/BackArrow.svg';
 
-export default `
+export const template = `
     <div class="{{wrapper_back_arrow_class}}">
             <img src="${BackArrow}" alt=""> 
     </div>

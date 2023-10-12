@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig, Plugin } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import path from 'path';
@@ -11,7 +10,7 @@ export default defineConfig({
     },
   },
   plugins: [
-        handlebars() as Plugin,
+    handlebars() as Plugin,
   ],
   css: {
     preprocessorOptions: {

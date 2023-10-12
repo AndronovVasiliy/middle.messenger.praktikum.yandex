@@ -1,1 +1,1 @@
-export default '<button class="{{wrapper_button_class}}" type="{{type}}">{{textButton}}</button>';
+export const template = '<button class="{{wrapper_button_class}}" type="{{type}}">{{children}}</button>';

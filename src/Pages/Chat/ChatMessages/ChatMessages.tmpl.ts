@@ -1,14 +1,7 @@
-import { Message } from './Message';
-
-export default `
+export const template = `
     <div class="{{wrapper_messages_class}}">
-            {{#each messages_history}}
-                    {{#if isOwned}}
-                        ${Message('{{messages}}', '{{images}}', '{{time}}', true)}
-                    {{else}}    
-                        ${Message('{{messages}}', '{{images}}', '{{time}}', false)}
-                    {{/if}}
-            {{/each}}
-        
+    {{#each messagesHistoryArr}}
+        {{{this}}}
+    {{/each}}
     </div>
 `;

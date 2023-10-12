@@ -1,15 +1,22 @@
-import Handlebars from 'handlebars';
-import SendMessageTmpl from './SendMessage.tmpl';
+import Block from '../../../Utils/Block';
 import styles from './SendMessage.module.less';
+import { template } from './SendMessage.tmpl';
 
-export const SendMessage = () => {
-  const template = Handlebars.compile(SendMessageTmpl);
+export class SendMessage extends Block {
+  constructor(props: any) {
+    super({
+      wrapper_send_message_class: styles.wrapper_send_message,
+      send_message_form_class: styles.send_message_form,
+      input_send_message_class: styles.input_send_message,
+      send_button_class: styles.send_button,
+      button_img_class: styles.button_img,
+      ...props,
+    });
+  }
 
-  return template({
-    wrapper_sendMessage_class: styles.wrapper_sendMessage,
-    sendMessage_form_class: styles.sendMessage_form,
-    input_sendMessage_class: styles.input_sendMessage,
-    send_button_class: styles.send_button,
-    button_img_class: styles.button_img,
-  });
-};
+  render() {
+    return this.compile(template, {
+      ...this.props,
+    });
+  }
+}

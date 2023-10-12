@@ -6,6 +6,11 @@
   align-items: center;
   box-sizing: border-box;
 
+  &:hover {
+    background-color: rgb(63 113 239 / 20%);
+    cursor: pointer;
+  }
+
   .user_chat_info {
     display: flex;
     flex: 1;
@@ -30,7 +35,7 @@
         font-weight: 500;
         font-size: 9px;
         line-height: 9px;
-        color: #999999;
+        color: var(--light-gray);
       }
     }
 
@@ -48,7 +53,7 @@
         font-weight: 500;
         font-size: 12px;
         line-height: 12px;
-        color: #999999;
+        color: var(--light-gray);
       }
 
       .message_new_message {
@@ -57,12 +62,12 @@
         align-items: center;
         width: 20px;
         height: 20px;
-        background-color: #3369F3;
+        background-color: var(--grey-electrician);
         border-radius: 100%;
         font-weight: 500;
         font-size: 11px;
         line-height: 12px;
-        color: #FFFFFF;
+        color: #fff;
       }
 
 
