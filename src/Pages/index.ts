@@ -1,7 +1,7 @@
-export { Login } from "./Login/Login.ts";
-export { Error } from "./Error/Error.ts";
-export { Registration } from "./Registration/Registration.ts";
-export { Profile } from "./Profile/Profile.ts";
-export { EditProfile } from "./EditProfile/EditProfile.ts";
-export { ChangePassword } from "./ChangePassword/ChangePassword.ts";
-export { Chat } from  "./Chat/Chat.ts";
+export { Login } from './Login';
+export { Error } from './Error';
+export { Registration } from './Registration';
+export { Profile } from './Profile';
+export { EditProfile } from './EditProfile';
+export { ChangePassword } from './ChangePassword';
+export { Chat } from './Chat';

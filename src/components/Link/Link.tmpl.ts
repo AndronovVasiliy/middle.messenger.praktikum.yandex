@@ -1,1 +1,1 @@
-export default `<a class="{{class}}" href="{{href}}">{{textLink}}</a>`;
+export const template = '<a class="{{link_wrapper_class}}" href="{{href}}">{{children}}</a>';

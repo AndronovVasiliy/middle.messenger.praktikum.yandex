@@ -1,5 +1,7 @@
-export { Button } from "./Button/Button";
-export { Link } from './Link/Link';
-export { Input } from './Input/Input';
-export { BackArrow } from './BackArrow/BackArrow.ts';
-export { Avatar } from './Avatar/Avatar.ts';
+export { Button } from './Button';
+export { Link } from './Link';
+export { Input } from './Input';
+export { BackArrow } from './BackArrow';
+export { Avatar } from './Avatar';
+export { Header } from './Header';
+export { SearchField } from './SearchField';

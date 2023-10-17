@@ -1,11 +1,17 @@
-import Handlebars from "handlebars";
-import SearchFieldTmpl from "./SearchField.tmpl.ts";
-import styles from "./SearchField.module.less"
+import Block from '../../Utils/Block';
+import styles from './SearchField.module.less';
+import { template } from './SearchField.tmpl';
 
-export const SearchField = () => {
-    const template = Handlebars.compile(SearchFieldTmpl);
+export class SearchField extends Block {
+  constructor() {
+    super({
+      searchFieldClass: styles.wrapper,
+    });
+  }
 
-    return template({
-        searchFieldClass: styles.wrapper
-    })
+  render() {
+    return this.compile(template, {
+      ...this.props,
+    });
+  }
 }

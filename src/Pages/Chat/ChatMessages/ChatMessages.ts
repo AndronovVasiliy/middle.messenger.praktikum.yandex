@@ -1,231 +1,38 @@
-import Handlebars from "handlebars";
-import ChatMessagesTmpl from "./ChatMessages.tmpl.ts";
-import styles from "./ChatMessages.module.less";
+import Block from '../../../Utils/Block';
+import styles from './ChatMessages.module.less';
+import { Message } from './Message';
+import { template } from './ChatMessages.tmpl';
 
-export const ChatMessages = (messages: any = []) => {
-    const template = Handlebars.compile(ChatMessagesTmpl);
-    
-    // let mockMessages = [
-    //     {
-    //         isOwned: false,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Как дела?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Норм, ты как?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Пойдешь пить пиво?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Да?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Как дела?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Норм, ты как?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Пойдешь пить пиво?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Да!",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Как дела?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Норм, ты как?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Пойдешь пить пиво?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Да?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Как дела?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Норм, ты как?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Пойдешь пить пиво?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Да!",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Как дела?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Норм, ты как?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Пойдешь пить пиво?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Да?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Привет",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Как дела?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Норм, ты как?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: false,
-    //         messages: "Пойдешь пить пиво?",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    //     {
-    //         isOwned: true,
-    //         messages: "Да!",
-    //         images: "",
-    //         time: "12:43",
-    //     },
-    // ]
+type TMessage = {
+  isOwned: boolean,
+  messages: string,
+  images: string,
+  time: string,
+};
 
-    return template({
-            wrapper_messages_class: styles.wrapper_messages,
-            messages_history: messages
-        })
+type TProps = {
+  messagesHistory: TMessage[],
+};
+
+export class ChatMessages extends Block {
+  constructor(props: TProps) {
+    const messagesHistoryArr = props.messagesHistory.map((el: TMessage) => new Message({
+      isOwned: el.isOwned,
+      time: el.time,
+      img: '' || el.images,
+      messageText: el.messages,
+    }));
+
+    super({
+      wrapper_messages_class: styles.wrapper_messages,
+      messagesHistoryArr,
+      ...props,
+    });
+  }
+
+  render() {
+    return this.compile(template, {
+      ...this.props,
+    });
+  }
 }

@@ -1,0 +1,37 @@
+{
+  "extends": [
+      "airbnb-base",
+      "airbnb-typescript/base"
+  ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "class-methods-use-this": "off",
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "max-len": [2, 120],
+    "@typescript-eslint/no-unused-vars": 2,
+    "import/prefer-default-export": "off",
+      "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+              "js": "never",
+              "ts": "never"
+          }
+      ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "./src/components"],
+          ["@Icons", "./src/Icons"]
+        ],
+        "extensions": [".ts", ".js", ".json", ".svg"]
+      }
+    }
+  }
+}

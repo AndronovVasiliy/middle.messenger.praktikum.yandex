@@ -1,14 +1,22 @@
-import Handlebars from "handlebars";
-import AvatarTmpl from "./Avatar.tmpl.ts";
-import styles from "./Avatar.module.less";
+import Block from '../../Utils/Block';
+import { template } from './Avatar.tmpl';
+import styles from './Avatar.module.less';
 
-export const Avatar = (avatar: string, width: string, height: string) => {
-    const template = Handlebars.compile(AvatarTmpl);
-
-    return template({
-        wrapper_avatar_class: styles.wrapper_avatar,
-        avatar_width: width,
-        avatar_height: height,
-        avatar
-    });
+type TProps = {
+  avatar_size: string,
+  avatar: string,
 };
+
+export class Avatar extends Block {
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+  constructor(props: TProps) {
+    super(props);
+  }
+
+  render() {
+    return this.compile(template, {
+      wrapper_avatar_class: styles.wrapper_avatar,
+      ...this.props,
+    });
+  }
+}
